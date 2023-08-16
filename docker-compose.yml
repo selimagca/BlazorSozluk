@@ -37,5 +37,5 @@ services:
     image: ${DOCKER_REGISTRY-}blazorsozlukprojectionsuserservice
     build:
       context: .
-      dockerfile: src/Projections/BlazorSozluk.Projections.User/Dockerfile
+      dockerfile: src/Projections/BlazorSozluk.Projections.UserService/Dockerfile
 
