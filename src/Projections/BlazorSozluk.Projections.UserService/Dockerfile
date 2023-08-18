@@ -5,11 +5,11 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Projections/BlazorSozluk.Projections.User/BlazorSozluk.Projections.UserService.csproj", "src/Projections/BlazorSozluk.Projections.User/"]
+COPY ["src/Projections/BlazorSozluk.Projections.UserService/BlazorSozluk.Projections.UserService.csproj", "src/Projections/BlazorSozluk.Projections.UserService/"]
 COPY ["src/Common/BlazorSozluk.Common/BlazorSozluk.Common.csproj", "src/Common/BlazorSozluk.Common/"]
-RUN dotnet restore "src/Projections/BlazorSozluk.Projections.User/BlazorSozluk.Projections.UserService.csproj"
+RUN dotnet restore "src/Projections/BlazorSozluk.Projections.UserService/BlazorSozluk.Projections.UserService.csproj"
 COPY . .
-WORKDIR "/src/src/Projections/BlazorSozluk.Projections.User"
+WORKDIR "/src/src/Projections/BlazorSozluk.Projections.UserService"
 RUN dotnet build "BlazorSozluk.Projections.UserService.csproj" -c Release -o /app/build
 
 FROM build AS publish
